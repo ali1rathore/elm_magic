@@ -30,6 +30,7 @@ def install(target):
     run_shell("wget -qO- https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz | tar xJv -C {target} --strip-components=1".format(target=target))
     click.echo("Installing elm-lang")
     run_shell("npm install -g elm")
+    run_shell("npm install -g elm-static-html")
 
 if __name__ == "__main__":
     main()
