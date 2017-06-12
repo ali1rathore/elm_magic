@@ -2,6 +2,13 @@
 Elm Magic
 =========
 
+:Author: Ali Rathore
+
+Introduces a %%elm magic.
+
+Compile and display Elm code in IPython and Jupyter notebooks
+
+Execute python code from Elm front-end
 
 .. image:: https://img.shields.io/pypi/v/elm_magic.svg
         :target: https://pypi.python.org/pypi/elm_magic
@@ -20,49 +27,74 @@ Elm Magic
 Elm Magic provides IPython magic commands that execute elm-lang code
 
 SYNOPSYS
------
-    %%elm 
-          ... <elm-lang code> ...
-              
-                  
-              - or - 
-                  
+--------
 
-    %%elm -i elm-lang/http elm-lang/mouse -w /tmp/myelmdir
-          ... <elm-lang code> ...
+.. code-block:: python
 
-    This magic will (1) set working dir to /tmp/myelmdir (or temporary dir)
-       (2) install elm-lang/http and elm-lang/mouse with elm-package install
-       (3) compile the cell input with elm-make 
-       (4) display the cell output as html
+    In [1]: %load_ext elm_magic
+
+    In [2]: %%elm
+       ...: import Html exposing (text)
+       ...: main =
+       ...:   text "Hello World"
+    Out[2]:
+       ...: Hello World
+
+    In [3]: %%elm -i elm-lang/http elm-lang/mouse -w /tmp/myelmdir
+       ...: <elm source code>
+    
+This magic will:
+  (1) use working dir as /tmp/myelmdir (or a new temporary dir)
+  (2) install elm-lang/http and elm-lang/mouse with elm-package install
+  (3) compile the cell input with elm-make 
+  (4) display the cell output as html
+
+The -r flag renders the cell contents with elm-static-html
+The cell must look exactly like this: 
+
+.. code-block:: python
+
+    In [4]: %%elm -r
+       ...: module Main exposing (..)
+       ...: import Html exposing (text)
+       ...: view = 
+       ...:   text "Hello World"
+    Out[4]:
+       ...: Hello World
+
 
 USAGE
 -----
-    first install elm_magic
 
-      git clone git@github.com:ali--/elm_magic.git
-      cd elm_magic
-      pip install -e .
+Install using github::
 
-      if elm and nodejs are not installed, you can try:
+    git clone git@github.com:ali--/elm_magic.git
+    cd elm_magic
+    pip install -e .
+..
 
-          elm_magic install --target <install-dir>
 
-          where <install-dir> is writable by the current user.
-            and in the user's PATH
+If elm and nodejs are not installed, you can try::
 
-                  e.g /usr/local/ or /opt/conda
+    elm_magic install --target <install-dir>
 
-    then in IPython or Jupyter:
+where <install-dir> is writable by the current user.
+and in the user's PATH (e.g /usr/local/ or /opt/conda)
+
+Load the magic extension in IPython or Jupyter::
  
         %load_ext elm_magic
 
-    then start using the %%elm magic:
+then start using the %%elm magic::
      
         %%elm 
           ... elm-lang code ...
 
-    see or set configuration parameters:
+
+CONFIGURATION
+-------------
+
+see or set configuration parameters::
 
         %config ElmMagic
 
@@ -70,7 +102,7 @@ Features
 --------
 
 * provides %%elm magic that executes elm-lang and displayes the result
-* can be used with any kernel
+* can be used with any jupyter kernel
 * directory used by elm-make is configurable
 * provides cli for installing nodejs and elm
 
