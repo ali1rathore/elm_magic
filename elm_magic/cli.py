@@ -32,5 +32,9 @@ def install(target):
     run_shell("npm install -g elm")
     run_shell("npm install -g elm-static-html")
 
+@main.command()
+def version():
+    click.echo("ElmMagic version 0.1")
+
 if __name__ == "__main__":
     main()
