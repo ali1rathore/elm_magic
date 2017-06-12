@@ -8,7 +8,7 @@ Introduces a %%elm magic.
 
 Compile and display Elm code in IPython and Jupyter notebooks
 
-Execute python code from Elm front-end
+.. image:: https://raw.github.com/ali--/elm_magic/master/docs/screenshot1.png
 
 .. image:: https://img.shields.io/pypi/v/elm_magic.svg
         :target: https://pypi.python.org/pypi/elm_magic
