@@ -15,7 +15,7 @@ deploy:
       Z0IzL0FPZVV1OThCT0hwbndPcVBGNFYrQUloN202N0F3NmZjeWFnVWdBYzRUQXRmMnhkZDh1RnVU
       VFRGc1hYcWRmSExHSC9iUDZuOGR0dGovbmNHT1Bvck52RU1qcnRxYnkyTW5NYzdNREpCRWNMK3c9
   true:
-    python: 2.7
+    python: 3.3
     repo: ali--/elm_magic
     tags: true
   provider: pypi
@@ -27,6 +27,4 @@ python:
 - 3.5
 - 3.4
 - 3.3
-- 2.7
-- 2.6
 script: tox
