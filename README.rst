@@ -43,7 +43,8 @@ Usage
     In [3]: %%elm -i elm-lang/http elm-lang/mouse -w /tmp/myelmdir
        ...: <elm source code>
     
-This magic will::
+This magic will:
+
   (1) use /tmp/myelmdir for workdir (uses new temporary dir by default)
   (2) install elm-lang/http and elm-lang/mouse with elm-package install
   (3) compile the cell input with elm-make 
@@ -66,7 +67,8 @@ The cell must look exactly like this:
 Installation
 ------------
 
-Install using pip::
+Install using pip:
+
     pip install --upgrade elm_magic
 ..
 
