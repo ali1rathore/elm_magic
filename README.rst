@@ -26,8 +26,8 @@ Compile and display Elm code in IPython and Jupyter notebooks
 
 Elm Magic provides IPython magic commands that execute elm-lang code
 
-SYNOPSYS
---------
+Usage
+-----
 
 .. code-block:: python
 
@@ -43,8 +43,8 @@ SYNOPSYS
     In [3]: %%elm -i elm-lang/http elm-lang/mouse -w /tmp/myelmdir
        ...: <elm source code>
     
-This magic will:
-  (1) use working dir as /tmp/myelmdir (or a new temporary dir)
+This magic will::
+  (1) use /tmp/myelmdir for workdir (uses new temporary dir by default)
   (2) install elm-lang/http and elm-lang/mouse with elm-package install
   (3) compile the cell input with elm-make 
   (4) display the cell output as html
@@ -63,14 +63,11 @@ The cell must look exactly like this:
        ...: Hello World
 
 
-USAGE
------
+Installation
+------------
 
-Install using github::
-
-    git clone git@github.com:ali--/elm_magic.git
-    cd elm_magic
-    pip install -e .
+Install using pip::
+    pip install --upgrade elm_magic
 ..
 
 
@@ -91,7 +88,7 @@ then start using the %%elm magic::
           ... elm-lang code ...
 
 
-CONFIGURATION
+Configuration
 -------------
 
 see or set configuration parameters::
