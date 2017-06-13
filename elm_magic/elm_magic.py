@@ -154,6 +154,7 @@ class ElmMagic(Magics, Configurable):
                 display(HTML(result._js))
             except:
                 result.display(div_id)
+            self._log("Elm result \n{}".format(result._js),args.debug)
             return
         else:
             self._log("Compiling Elm source\n{}".format(cell),args.debug)
