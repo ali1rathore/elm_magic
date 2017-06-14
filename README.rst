@@ -2,13 +2,11 @@
 Elm Magic
 =========
 
-:Author: Ali Rathore
-
-Introduces a %%elm magic.
-
-Compile and display Elm code in IPython and Jupyter notebooks
+Compile and render Elm code in IPython and Jupyter notebooks
 
 .. image:: https://raw.github.com/ali--/elm_magic/master/docs/screenshot1.png
+
+sample notebook : https://gist.github.com/anonymous/68d36f1b6026893bc08b22b053e2f42e
 
 .. image:: https://img.shields.io/pypi/v/elm_magic.svg
         :target: https://pypi.python.org/pypi/elm_magic
